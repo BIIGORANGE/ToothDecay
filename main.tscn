@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://mrxk6xeqv7hn"]
+
+[ext_resource type="Script" uid="uid://b78f53mtetlys" path="res://character_body_3d.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cw5rx4y61y66" path="res://puzzle_handler.gd" id="2_0xm2m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+size = Vector2(300, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ig7tw"]
+
+[node name="Main" type="Node3D" unique_id=956943556]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1380415055]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1573557966]
+mesh = SubResource("PlaneMesh_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1274581308]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2068902222]
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=721626341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0593281, 0)
+mesh = SubResource("CapsuleMesh_h2yge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=32064992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0670993, 0)
+shape = SubResource("CapsuleShape3D_1bvp3")
+
+[node name="CameraPitch" type="Node3D" parent="CharacterBody3D" unique_id=527531187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -0.29579687)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraPitch" unique_id=771178975]
+keep_aspect = 0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=707517297]
+transform = Transform3D(0.49933475, -0.8664091, 0, 0.8664091, 0.49933475, 0, 0, 0, 1, -17.029118, 13.466376, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1227945142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0237207, 2.47695, -6.90693)
+mesh = SubResource("CapsuleMesh_ig7tw")
+
+[node name="PuzzleHandler" type="Node3D" parent="." unique_id=2009260504]
+script = ExtResource("2_0xm2m")
