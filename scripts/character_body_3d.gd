@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 @onready var camera_pitch: Node3D = $CameraPitch
 @onready var camera: Camera3D = $CameraPitch/Camera3D
 @onready var character_body_3d: CharacterBody3D = $"."
+@onready var open_door_label: BoxContainer = $UserInterface/OpenDoorLabel
+@onready var clean_vents_label: BoxContainer = $UserInterface/CleanVentsLabel
 
 var sensitivity = 0.01
 
@@ -48,5 +50,4 @@ func _unhandled_input(event :InputEvent) -> void:
 		self.rotate_y(-event.relative.x * 0.005)
 		#same here, but flip x for y and right and left for up and down
 		camera.rotate_x(-event.relative.y * 0.005)
-
-	camera.rotation.x = clamp(camera.rotation.x, -1.5, 1.5)
+	camera.rotation.x = clamp(camera.rotation.x, -1.4, 1.5)

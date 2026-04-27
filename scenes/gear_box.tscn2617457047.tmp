@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bwr7l1wafcs07"]
+
+[ext_resource type="Texture2D" uid="uid://donvr6j447a0j" path="res://PNG/Green/texture_05.png" id="1_b7evk"]
+[ext_resource type="Script" uid="uid://ryvy2i8kvqur" path="res://scenes/gear_box.gd" id="1_isnq3"]
+[ext_resource type="PackedScene" uid="uid://c6fcj0no1aks4" path="res://scenes/interact_range.tscn" id="2_u6lgf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_b7evk")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_tbgi4"]
+material = SubResource("StandardMaterial3D_o6xl0")
+size = Vector3(0.75, 1.5, 0.75)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u6lgf"]
+points = PackedVector3Array(-0.375, -0.75, -0.375, -0.375, -0.75, 0.375, -0.375, 0.75, -0.375, 0.375, -0.75, -0.375, 0.375, -0.75, 0.375, -0.375, 0.75, 0.375, 0.375, 0.75, -0.375, 0.375, 0.75, 0.375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isnq3"]
+size = Vector3(2.0715942, 2.4963455, 1.5361328)
+
+[node name="GearBox" type="StaticBody3D" unique_id=2111831594]
+script = ExtResource("1_isnq3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=35473706]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_tbgi4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=818277081]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_u6lgf")
+
+[node name="InteractRange" parent="." unique_id=248269530 instance=ExtResource("2_u6lgf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractRange" unique_id=733949895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21463013, -0.25391006, 0)
+shape = SubResource("BoxShape3D_isnq3")
+
+[node name="FailureTimer" type="Timer" parent="." unique_id=1418953668]
+
+[connection signal="interact" from="InteractRange" to="." method="_on_interact_emitted"]
+[connection signal="timeout" from="FailureTimer" to="." method="_on_failure_timer_timeout"]

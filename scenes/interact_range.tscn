@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c6fcj0no1aks4"]
+
+[ext_resource type="Script" uid="uid://cvsarue8jwac7" path="res://scripts/interact_range.gd" id="1_thet4"]
+
+[node name="InteractRange" type="Area3D" unique_id=248269530]
+script = ExtResource("1_thet4")
+
+[node name="Prompt" type="Label" parent="." unique_id=1105042669]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

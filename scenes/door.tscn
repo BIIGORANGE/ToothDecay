@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c8ag2ir0syhju"]
+
+[ext_resource type="Texture2D" uid="uid://dl5j7n3kniewe" path="res://PNG/Light/texture_10.png" id="1_hpvv5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hun61"]
+size = Vector3(6, 6, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvdjg"]
+albedo_texture = ExtResource("1_hpvv5")
+uv1_scale = Vector3(1.11, 1.11, 1.11)
+uv1_offset = Vector3(-0.07, -0.165, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_83dcw"]
+points = PackedVector3Array(3, 3, 0.25, 3, 3, -0.25, -3, 3, 0.25, 3, -3, 0.25, 3, -3, -0.25, -3, 3, -0.25, -3, -3, 0.25, -3, -3, -0.25)
+
+[node name="Door" type="StaticBody3D" unique_id=799741706]
+
+[node name="Frame" type="MeshInstance3D" parent="." unique_id=1197727741]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+mesh = SubResource("BoxMesh_hun61")
+surface_material_override/0 = SubResource("StandardMaterial3D_uvdjg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1627348967]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_83dcw")
