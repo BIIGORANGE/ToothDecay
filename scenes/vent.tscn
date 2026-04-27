@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://cjbjgbt301os2"]
 
-[ext_resource type="Texture2D" uid="uid://4j15l52wh8rx" path="res://PNG/Dark/texture_04.png" id="1_2sovo"]
+[ext_resource type="Texture2D" uid="uid://4j15l52wh8rx" path="res://assets/PNG/Dark/texture_04.png" id="1_2sovo"]
 [ext_resource type="PackedScene" uid="uid://c6fcj0no1aks4" path="res://scenes/interact_range.tscn" id="2_hhoh0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 size = Vector3(1, 0.5, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhoh0"]
 albedo_texture = ExtResource("1_2sovo")
-uv1_triplanar = true
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hhoh0"]
 points = PackedVector3Array(0.5, 0.25, 1, 0.5, -0.25, 1, 0.5, 0.25, -1, -0.5, 0.25, 1, -0.5, -0.25, 1, 0.5, -0.25, -1, -0.5, 0.25, -1, -0.5, -0.25, -1)
@@ -22,7 +21,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=312232501]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_lquwl")
-surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+surface_material_override/0 = SubResource("StandardMaterial3D_hhoh0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1864149717]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)

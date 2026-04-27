@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bef6c2mrtspkx" path="res://scenes/character.tscn" id="1_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://dn6fmceos7d50" path="res://assets/hollow_torus.obj" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://w685vxnpq7db" path="res://scenes/light_1.tscn" id="2_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://ewpf6ap2c15c" path="res://PNG/Light/texture_06.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ewpf6ap2c15c" path="res://assets/PNG/Light/texture_06.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cjbjgbt301os2" path="res://scenes/vent.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c8ag2ir0syhju" path="res://scenes/door.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bwr7l1wafcs07" path="res://scenes/gear_box.tscn" id="6_tefeu"]
@@ -32,7 +32,7 @@ environment = SubResource("Environment_tefeu")
 
 [node name="Lights" type="Node" parent="." unique_id=1785809561]
 
-[node name="Light_1" parent="Lights" unique_id=336220443 instance=ExtResource("2_o6xl0")]
+[node name="Light" parent="Lights" unique_id=336220443 instance=ExtResource("2_o6xl0")]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -7.4535947, 1.7979743, 8.119884)
 
 [node name="SpaceStationHull" type="StaticBody3D" parent="." unique_id=398700003]

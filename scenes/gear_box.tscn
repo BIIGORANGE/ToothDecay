@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://bwr7l1wafcs07"]
 
-[ext_resource type="Texture2D" uid="uid://donvr6j447a0j" path="res://PNG/Green/texture_05.png" id="1_b7evk"]
 [ext_resource type="Script" uid="uid://ryvy2i8kvqur" path="res://scripts/gear_box.gd" id="1_isnq3"]
+[ext_resource type="Texture2D" uid="uid://dxfvhi3y0rhy3" path="res://assets/PNG/Green/texture_09.png" id="2_isnq3"]
 [ext_resource type="PackedScene" uid="uid://c6fcj0no1aks4" path="res://scenes/interact_range.tscn" id="2_u6lgf"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
-albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
-albedo_texture = ExtResource("1_b7evk")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjjuh"]
+albedo_texture = ExtResource("2_isnq3")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tbgi4"]
-material = SubResource("StandardMaterial3D_o6xl0")
+material = SubResource("StandardMaterial3D_pjjuh")
 size = Vector3(0.75, 1.5, 0.75)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u6lgf"]

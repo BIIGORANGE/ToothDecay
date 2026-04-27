@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctq8achcq6ag0" path="res://scripts/light.gd" id="1_rwj2x"]
 [ext_resource type="AudioStream" uid="uid://bjug2trg6uav7" path="res://assets/lamp.mp3" id="2_l3ia3"]
 
-[node name="Light_1" type="OmniLight3D" unique_id=336220443]
+[node name="Light" type="OmniLight3D" unique_id=336220443]
 transform = Transform3D(-0.5000001, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.5000001, 0, 0, 0)
 light_color = Color(0.99999934, 0.9972672, 0.8084543, 1)
 shadow_enabled = true
